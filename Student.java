@@ -5,7 +5,8 @@ public class Student {
 	private int rollno; // Instance Variables 
 	private String name;
 	private String course;
-	private double marks;
+	//private double marks;
+	private double marks[];
 	private String centerName;
 	private String email;
 	private String phone;
@@ -28,7 +29,7 @@ public class Student {
 		this.name = name;
 	}
 	// Primary Member Initalize
-	Student(int rollno, String name, String course, double marks){
+	Student(int rollno, String name, String course, double marks[]){
 		//this();
 		this(rollno, name);
 		//this(); // Calling Default Constructor
@@ -60,10 +61,10 @@ public String getName() {
 	public void setCourse(String course) {
 		this.course = course;
 	}
-	public double getMarks() {
+	public double[] getMarks() {
 		return marks;
 	}
-	public void setMarks(double marks) {
+	public void setMarks(double[] marks) {
 		this.marks = marks;
 	}
 	public String getCenterName() {
@@ -138,7 +139,10 @@ public String getName() {
 		System.out.println("RollNo is "+rollno);
 		System.out.println("Name "+name);
 		System.out.println("Course "+course);
-		System.out.println("Marks "+marks);
+		//System.out.println("Marks "+marks);
+		for(double mark : marks) {
+			System.out.println(mark);
+		}
 		System.out.println("Center Name "+centerName);
 	}
 }

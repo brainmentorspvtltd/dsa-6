@@ -3,10 +3,11 @@
 public class TestStudent {
 
 	public static void main(String[] args) {
-		Student ram = new Student(1001, "Ram", "java", 90);
+		double marks [] = {90,77,87};
+		Student ram = new Student(1001, "Ram", "java", marks);
 		ram.setName(ram.getName()+" Kumar");
 		ram.print();
-		Student shyam = new Student(1002,"Shyam","JavaScript",100);
+		Student shyam = new Student(1002,"Shyam","JavaScript",new double[] {99,77,88});
 		shyam.print();
 //		Student ram;
 //		ram = new Student(); // Instance Create == Object Creation (e.g new Student())
