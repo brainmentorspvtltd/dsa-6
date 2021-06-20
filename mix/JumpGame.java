@@ -4,28 +4,38 @@ public class JumpGame {
 	
 	public static boolean canJump(int arr[])
 	{
-		if(arr.length <= 1)
+		int max = arr[0];
+		
+		if(arr.length == 1)
 		{
 			return true;
 		}
 		
-		for(int i = 0; i < arr.length;)
+		for(int i = 0; i < arr.length; i++)
 		{
-			if(arr[i] == 0)
+			if(max <= i && arr[i] == 0)
 			{
 				return false;
 			}
 			
-			i = i + arr[i];
+			if(i + arr[i] > max)
+			{
+				max = i + arr[i];
+			}
+			
+			if(max >= arr.length-1)
+			{
+				return true;
+			}
 		}
 		
-		return true;
+		return false;
 	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		int arr[] = {3, 2, 1, 0, 4};
+		int arr[] = {2, 3, 1, 1, 4};
 		
 		System.out.println(canJump(arr));
 
