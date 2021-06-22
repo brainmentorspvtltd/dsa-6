@@ -1,0 +1,10 @@
+Q1 Store all Subsequence of a given string in a List
+Input : amit
+Output : ["","t", "i","it",","m","mt","mi","mit","a","at","ai","ait","amit"]
+
+Q2. Store all Permutation of a given string in List
+Input: abc
+Output : ["abc","acb","bac", "bca", "cab","cba"]
+
+Q3. Given n dice each with m faces, numbered from 1 to m, find the number of ways to get sum X
+
