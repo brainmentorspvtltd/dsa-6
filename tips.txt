@@ -1,0 +1,50 @@
+1st Round - C++/ Java / Python - Basic, OOPS, String , Exception , OS, DBMS, Networking
+
+Networking
+SSL 
+Toplogies
+HTTPS how it work
+HTTP vs HTTPS
+TCP/IP Working
+TCP/IP vs HTTP
+Ports?
+Subnets, Subnet Mask
+Encoding
+Cloud Computing
+
+DBMS
+1. Joins
+2. Normalization
+3. ACID 
+4. Backup, Scheduling
+5. Group By, Aggregate Function
+6. Pagination
+7. Query
+
+O/S
+1. Service vs Process vs Threads
+2. Scheduling, Disk Scheduling
+3. Time Slicing
+4. Commands (DOS, Linux)
+5. Round Robin
+6. LRU
+
+
+
+
+45 min to 60 min - MCQ Based
+
+2nd Round - Coding Round (5 Coding Questions) (75 min)
+1. Array based problem, Sliding Window Technique
+2. string based problem
+3. DP 
+4. Tree Based
+
+
+3rd Round Technical Interview Round
+Big Problem - 
+File Handling Problem
+Encryption , CRUD , Task Manager
+System Process - Process ID, Name, CPU Usage , Memory Usage
+Java - Process, Runtime
+OS/ DBMS/ Networking
