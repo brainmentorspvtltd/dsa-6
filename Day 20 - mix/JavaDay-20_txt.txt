@@ -1,0 +1,17 @@
+1. Jump Game
+
+2. Pascal Triangle
+
+3. Product of array except self / Product Array Puzzle - Already Done
+
+4. Search in Rotated Sorted Array - HW
+
+5. Partition Equal Subset
+
+6. Equilibrium index of an Array - HW
+
+7. KMP - Knuth Morris Pratt Algorithm - LPS(Longest Prefix/Proper Suffix)
+
+
+
+
