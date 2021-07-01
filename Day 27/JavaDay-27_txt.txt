@@ -1,0 +1,7 @@
+1. Coin Change Problem
+
+2. Palindrome Partitioning
+
+3. Tower of Hanoi
+
+4. Word Search
