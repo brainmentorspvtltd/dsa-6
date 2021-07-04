@@ -7,6 +7,8 @@ public class WordSearch {
 							{'S', 'E', 'C', 'S'},
 							{'A', 'D', 'E', 'E'}};
 	
+	static boolean visited[][];
+	
 	public static boolean searchWord(int i, int j, int index, String word, char board[][])
 	{
 		//base case 
@@ -16,10 +18,12 @@ public class WordSearch {
 		}
 		
 		//boundary case
-		if(i < 0 || i >= board.length || j < 0 || j >= board.length || word.charAt(index) != board[i][j])
+		if(i < 0 || i >= board.length || j < 0 || j >= board.length || word.charAt(index) != board[i][j] || visited[i][j])
 		{
 			return false;
 		}
+		
+		visited[i][j] = true;
 		
 		if(
 				searchWord(i + 1, j, index + 1, word, board) ||
@@ -30,6 +34,7 @@ public class WordSearch {
 			return true;
 		}
 			
+		visited[i][j] = false;
 		return false;		
 	}
 	
@@ -37,6 +42,8 @@ public class WordSearch {
 	{
 		int rows = board.length;
 		int columns = board[0].length;
+		
+		visited = new boolean[rows][columns];
 		
 		for(int i = 0; i < rows; i++)
 		{
@@ -55,7 +62,7 @@ public class WordSearch {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		String result = exist(board, "ABCCED") ? "Found" : "Not Found";
+		String result = exist(board, "ABCCCE") ? "Found" : "Not Found";
 		
 		System.out.println(result);
 
