@@ -1,0 +1,9 @@
+1. Quick Sort
+
+2. In Place Sort
+
+3. Bucket Sort
+
+4. Shell Sort
+
+5. Rat in Maze - HW
