@@ -1,0 +1,112 @@
+1. Trapping Rain Water Problem - Stack - Home Work
+
+Algo: 
+
+Simple/Naive Approach
+1. Traverse the array from start to end
+2. at left maximum height
+3. at right maximum height
+4. result = result + min(leftHeight, rightHeight) -  arr[i]
+
+Optimized Approach
+1. maintain two variables as leftmax and rightmax
+2. result = result + min(leftHeight, rightHeight) -  arr[i]
+
+2. Postfix to Prefix
+
+Infix: a + b
+Prefix: +ab
+Postfix: ab+
+
+solution:
+Postfix: ab+
+1. Postfix to infix: a + b
+2. Infix to Prefix: +ab
+
+Approach:Postfix to prefix
+
+- Read the postfix expression from left to right
+- If the symbol is operand, then push into the stack
+- If the symbol is operator, then pop operands from the stack
+- string = operator + operand2 + operand1, then push it into the stack
+
+Postfix: ABC/-AK/L-*
+Infix: (A - (B / C)) * ((A / K) - L)
+Prefix: *-A/BC-/AKL
+
+Infix: (A + B) * (C / D)
+Postfix: AB+CD/* - correct
+Prefix: *+AB/CD - correct
+
+(A + B) * (C / D) - Infix
+
+Prefix: 1. (+AB) * (/CD), 2. *+AB/CD
+Postfix: 1. (AB+) * (CD/) 2. AB+CD/*
+
+--> A - B / C * A / K - L : Infix
+
+Postfix: 
+1. A - (BC/) * A / K - L
+2. A - (BC/) (A *) / K - L
+3. A - (BC/) (A*K/)-L
+4. ABC/-A*K/L-
+
+Order of Precedence:
+
+0. ()
+1. Exponential - Right to Left
+2. Multiply and Divide - Left to Right
+3. Addition and Subtraction - Left to Right
+
+3. Duplicate Parenthesis in an expression or not
+
+Input: 
+((a + b))
+
+push - (
+push - (
+push - a
+push - +
+push - b
+push - ), not pushed
+
+pop - b
+pop - +
+pop - a
+pop - (
+
+Updated Stack 
+push - ( - top
+push - ), not pushed
+pop - (
+
+4. Flood Fill Algorithm
+
+- Recursive Approach - Home Work
+- Queue Approach
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
