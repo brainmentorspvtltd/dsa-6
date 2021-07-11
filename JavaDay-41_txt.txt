@@ -1,0 +1,15 @@
+1. Merge Overlapping Intervals
+
+Comparator: 
+- It is an interface, and used to order the objects of a user - defined class.
+- It is present in Java.Util package
+- This interface have two methods 1. compare(object obj1, object obj2) and equals(object obj)
+
+2. Implement a Queue using only single stack
+
+3. Maximum Sum Circular Sub - Array
+
+4. Sliding Window Maximum - Stack - Home Work
+- Prerequisite : Next Greater Element
+
+5. Flood Fill Algorithm - Queue - Home Work
