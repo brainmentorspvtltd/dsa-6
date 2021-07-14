@@ -1,7 +1,9 @@
 package tree;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.Stack;
@@ -16,6 +18,7 @@ class BinaryTree<T>{
 		//this.left = this.right = null; by default null
 	}
 }
+
 
 class BinaryTreeOperations{
 	Scanner scanner = new Scanner(System.in);
@@ -120,6 +123,8 @@ class BinaryTreeOperations{
 		}
 	}
 	
+	
+	
 	void levelOrderPrintBetter(BinaryTree<Integer> root) {
 		LinkedList<BinaryTree> queue = new LinkedList<>();
 		queue.add(root);
@@ -217,7 +222,7 @@ class BinaryTreeOperations{
 	
 	/*
 	 * distance default value is 0 , because start from root (0)
-	 * 
+	 * DFT
 	 */
 	void verticalOrder(BinaryTree<Integer> root, int distance, TreeMap<Integer, ArrayList<Integer>> map) {
 		if(root == null) {
@@ -235,6 +240,58 @@ class BinaryTreeOperations{
 		}
 		verticalOrder(root.left, distance-1, map);
 		verticalOrder(root.right, distance+1, map);
+	}
+	
+	class Pair<T>{
+		BinaryTree<T> node;
+		int level;
+		Pair(BinaryTree<T> node, int level){
+			this.node = node;
+			this.level = level;
+		}
+		
+	}
+	
+	// BFT
+	void verticalOrderBFT(BinaryTree<Integer> root) {
+		// Queue 
+		LinkedList<Pair<Integer>> queue = new LinkedList<>();
+		HashMap<Integer, List<Integer>> map = new HashMap<>();
+		int minDistance = 0 , maxDistance = 0;
+		queue.add(new Pair<Integer>(root, 0));
+		while(!queue.isEmpty()) {
+			int size = queue.size();
+			while(size>0) {
+				Pair<Integer> pair = queue.removeFirst();
+				minDistance = Math.min(minDistance, pair.level);
+				maxDistance = Math.max(maxDistance, pair.level);
+				// If Map Key (Level) is not Present, So we create a fresh List and add in Map
+				map.putIfAbsent(pair.level,new ArrayList<Integer>());
+				map.get(pair.level).add(pair.node.data);
+				if(pair.node.left!=null) {
+					queue.add(new Pair<Integer>(pair.node.left, pair.level-1 ));
+				}
+				if(pair.node.right!=null) {
+					queue.add(new Pair<Integer>(pair.node.right, pair.level+1 ));
+				}
+				size--;
+				/*
+				if(map.get(pair.level)== null) {
+					List<Integer> list = new ArrayList<>();
+					list.add(pair.node.data);
+					map.put(pair.level, list);
+				}
+				else { // Map key is Present, Fetch the existing list
+					List<Integer> list = map.get(pair.level);
+					list.add(pair.node.data);
+					map.put(pair.level, list);
+				}*/
+			}
+		}
+		// Print Level Wise Negative to Positive
+		for(int i = minDistance; i<=maxDistance; i++) {
+			System.out.println(i + "  " + map.get(i));
+		}
 	}
 	
 	void topView(BinaryTree<Integer> root) {
@@ -261,6 +318,24 @@ class BinaryTreeOperations{
 		preorder(root.left);
 		
 		preorder(root.right);
+		
+	}
+	
+	boolean isCorrectSum(BinaryTree<Integer> root) {
+		if(root == null) {
+			return true;
+		}
+		if(root.left==null && root.right==null) {
+			return true;
+		}
+		int sum = 0;
+		if(root.left!=null) {
+			sum+=root.left.data;
+		}
+		if(root.right!=null) {
+			sum+=root.right.data;
+		}
+		return (root.data == sum && isCorrectSum(root.left) && isCorrectSum(root.right));
 		
 	}
 	
@@ -439,15 +514,18 @@ public class BinaryTreeDemo {
 				root = opr. insert();
 				break;
 			case 2:
+				System.out.println(opr.isCorrectSum(root));
+				//opr.verticalOrderBFT(root);
 				//opr.levelOrderPrintBetter(root);
 				//opr.leftView(root);
 				//opr.rightView(root);
+				
 				//TreeMap<Integer, ArrayList<Integer>> map = new TreeMap<Integer, ArrayList<Integer>>();
 				//opr.verticalOrder(root, 0, map);
 				//System.out.println(map);
 				//opr.topView(root);
 				//opr.diagonalView(root);
-				opr.printBoundary(root);
+				//opr.printBoundary(root);
 				//opr.levelOrder(root);
 				//opr.print(root);
 				break;
