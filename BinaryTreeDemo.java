@@ -86,6 +86,29 @@ class BinaryTreeOperations{
 		
 	}
 	
+
+	BinaryTree<Integer> start; // DLL start
+	
+	BinaryTree<Integer> previous;
+	void btToDLL(BinaryTree<Integer> root) {
+		if(root == null) {
+			return ;
+		}
+		btToDLL(root.left);
+		if(start == null) {
+			start = root;
+		}
+		else {
+			root.left = previous;
+			previous.right = root; 
+		}
+		previous = root;
+		
+		//System.out.println(root.data);
+		btToDLL(root.right);
+		
+	}
+	
 	void inorderItr(BinaryTree<Integer> root) {
 		if(root == null) {
 			return ;
@@ -458,7 +481,49 @@ class BinaryTreeOperations{
 		
 		
 	}
-
+	int stage = 0; // Still Not found
+	BinaryTree<Integer> predecessor;
+	BinaryTree<Integer> successor;
+	
+	void preOrSuc(BinaryTree<Integer> node , int n) {
+		if(node == null) {
+			return ;
+		}
+		//System.out.println(node.data);
+		if(stage == 0) {
+			if(node.data == n) { // Data found
+				stage = 1;
+			}
+			else { // Moving on 
+				predecessor = node; // Previous Node Reference
+			}
+		}
+		else
+			if(stage == 1) {
+				successor = node;
+				stage = 2;
+			}
+		
+		preOrSuc(node.left, n);
+		preOrSuc(node.right, n);
+	}
+	
+	BinaryTree<Integer> mirror(BinaryTree<Integer> node) {
+		if(node == null) {
+			return node;
+		}
+		
+		BinaryTree<Integer> leftNode = mirror(node.left);
+		
+		BinaryTree<Integer> rightNode = mirror(node.right);
+		// Swap Logic
+		node.left = rightNode;
+		node.right = leftNode;
+		return node;
+		//System.out.println(root.data);
+		
+	}
+	
 	void postorder(BinaryTree<Integer> root) {
 		if(root == null) {
 			return ;
@@ -514,7 +579,10 @@ public class BinaryTreeDemo {
 				root = opr. insert();
 				break;
 			case 2:
-				System.out.println(opr.isCorrectSum(root));
+				opr.preOrSuc(root, 30);
+				System.out.println("PRE "+opr.predecessor.data);
+				System.out.println("SUCCESSOR "+opr.successor.data);
+				//System.out.println(opr.isCorrectSum(root));
 				//opr.verticalOrderBFT(root);
 				//opr.levelOrderPrintBetter(root);
 				//opr.leftView(root);
