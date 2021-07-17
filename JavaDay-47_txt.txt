@@ -1,0 +1,21 @@
+1. Trie 
+
+- Trie is a special type or ordered tree.
+- It is also called prefix(Prefix Matching) tree
+- Used to store string in tree
+- Information retrieval tree
+
+Applications:
+
+1. Google Search
+2. Dictionary
+3. Spell Checker
+
+2. Heap or Binary Heap
+
+- Heap is a tree based data structure
+- Heap is a complete binary tree
+- Heap has two types:
+
+1. Max Heap
+2. Min Heap
