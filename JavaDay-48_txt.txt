@@ -1,0 +1,68 @@
+Heap
+
+- Deletion in a heap (Max or Min) - Home Work
+
+Steps:
+1. Remove root element and update root element with last element
+2. Then check your heap tree is heapify or not
+3. To compare root node with left child(2 * i) and right child(2 * i + 1)
+4. Recursively check at all nodes
+
+Priority Queue:
+
+- heap is one efficient implementation of an abstract data type is called priority queue.
+- because in a heap highhest or lowest priority element is always stored at the root node.
+- priority queue class is used to implement by default min heap
+- To implement max heap, we use Collections.reverseOrder().
+
+- Max Heap implementation by using priority queue - done
+- Min Heap implementation by using priority queue - done
+
+-Heap Sort - Home Work
+
+- Inorder Successor in Binary Search Tree
+- Inorder Predessor in Binary Search Tree
+
+- Find Peak(max or min) Number in a Binary Tree - Home Work
+
+Max Value:
+
+result = node.data
+lmax
+rmax
+
+lmax > result
+result = lmax
+
+rmax > result
+result = rmax
+
+Min Value:
+
+result = node.data
+lmin
+rmin
+
+lmin < result
+result = lmin
+
+rmax < result
+result = rmin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
