@@ -1,0 +1,8 @@
+Spanning Tree
+Minimum Spanning Tree
+- Kruskal's Algorithm
+	- Cycle Detection using Union Find
+- Prim's Algorithm
+
+Shortest Path Algorithm
+- Dijkstra's Algorithm
