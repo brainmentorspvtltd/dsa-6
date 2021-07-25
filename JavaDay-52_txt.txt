@@ -1,0 +1,10 @@
+Shortest Path Algorithm
+
+1. Dijkstra's Algorithm
+2. Bell Man Algorithm - code implementation
+	- code execution - home work
+
+3. Travelling Salesman Problem
+- minimum weight: Hamiltonion Cycle	
+
+4. Kahn's Algorithm: Topological Sorting
